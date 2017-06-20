@@ -13,3 +13,12 @@ exports.logout = (req, res) => {
   res.redirect('/');
 };
 
+exports.isLoggedIn = (req, res, next) => {
+  if(req.isAuthenticated()) {
+    next();
+    return
+  }
+  req.flash('error', 'Oops, you need to login');
+  res.redirect('/login');
+};
+
