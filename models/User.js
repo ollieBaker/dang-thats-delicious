@@ -10,11 +10,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const userSchema = new Schema({
   email: {
     type: String,
-    uniques: true,
+    unique: true,
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address'],
-    require: 'Please supply an email address'
+    required: 'Please Supply an email address'
   },
   name: {
     type: String,
@@ -25,7 +25,7 @@ const userSchema = new Schema({
   resetPasswordExpires: Date
 });
 
-userSchema.virtual('gravatar').get(function(){
+userSchema.virtual('gravatar').get(function() {
   const hash = md5(this.email);
   return `https://gravatar.com/avatar/${hash}?s=200`;
 });
