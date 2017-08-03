@@ -1,3 +1,4 @@
 node_modules
 variables.env
-public
+public/dist
+public/uploads
