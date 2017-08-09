@@ -9,3 +9,6 @@ autoComplete($('#address'), $('#lat'), $('#lng'));
 
 typeAhead($('.search'));
 makeMap($('#map'));
+
+const heartForms = $$('form.heart');
+heartForms.on('submit', ajaxHeart);

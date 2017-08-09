@@ -56,7 +56,11 @@ router.post(
 );
 router.get('/map', catchErrors(storeController.mapPage));
 //Not implemented yet
-//router.get('hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
+router.get(
+  '/hearts',
+  authController.isLoggedIn,
+  catchErrors(storeController.getHearts)
+);
 router.post(
   '/reviews/:id',
   authController.isLoggedIn,
