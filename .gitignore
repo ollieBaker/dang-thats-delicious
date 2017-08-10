@@ -1,4 +1,4 @@
 node_modules
 variables.env
-public/dist
-public/uploads
+variables.env.now
+*.log
